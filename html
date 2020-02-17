@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/stye.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">>
+    <script type="text/javascript" src="jquery-1.3.3.min.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+
+            var consulta;
+
+            $("#buscador").keyup(function(e){
+
+                consulta = $('#buscar').val();
+
+                $.ajax({
+
+                type: "POST",
+                url:"busqueda.php",
+                data:"b="+consulta,
+                dataType:"html",
+                beforeSend:function(){
+                    $("#resultado").html("<p align='center'><img src='miau.gif'/></p>'");
+                },
+                error: function(){
+                    alert("error a la peticion ajax");
+                },
+
+                    success:function(data){
+                        $("#resultado").empty();
+                        $("#resultado").append(data);
+
+                    }
+
+                });
+
+            });
+            
+
+        });
+
+
+
+    </script>
+
+	<title>Copyfake</title>
+</head>
+<body>
+<center>
+	
+	 <div class="panel-heading" style="background-color: skyblue; color: white; font-weight: bold; text-align: center; height:160px ;width:1000px ">
+	 	<br>
+	 	<br>
+                <h1 style="color: white;text-align: center">Inventario</h1>
+            
+
+            <br>
+             <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="pagina.html"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Inicio</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Contacto.html"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>Login</a></li>
+                        <li><a href="Agregar.html"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Altas</a></li>
+                        <li><a href="Baja.html"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Bajas</a></li>
+                        <li><a href="Modi.php"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Modificaciones</a></li>
+                        <li><a href="Vistas.php"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Vistas</a></li>
+                        <li><a href="Transacciones.php"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Transacciones</a></li>
+                        <li><a href="Bitacoras.html"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Bitacoras</a></li>
+                        <li><a href="Informacion.html"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Informacion</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>	
+            	
+            <br>
+            <br>
+            <div class="panel-heading" style="background-color: #B0C4DE; color: white; font-weight: bold; text-align: center; height:160px ;width:1000px ">
+
+                <br><br>
+
+                <input type="text"  id="buscador" name="buscador" size="60" style="color: black">
+
+	
+	
+</center>
+</body>
+</html>
