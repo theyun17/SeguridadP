@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Inventario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+     
+      
+    </head>
+    <body>
+ <div class="panel-heading" style="background-color: deepskyblue; color: white; font-weight: bold; text-align: center">
+                <h1 style="color: white;text-align: center">Inventario</h1>
+            </div>
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="Pagina.html"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Menú</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                       <li><a href="Pagina.html"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> Inicio</a></li>
+                        <li><a href="Agregar.html"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Altas</a></li>
+                        <li><a href="Baja.html"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Bajas</a></li>
+                        <li><a href="Modi.php"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Modificaciones</a></li>
+                        <li><a href="Vistas.php"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Vistas</a></li>
+                        <li><a href="Transacciones.php"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Transacciones</a></li>
+                        <li><a href="Bitacoras.html"><span class="glyphicon-arrow-down" aria-hidden="true"></span>Bitacoras</a></li>
+                        <li><a href="Informacion.html"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Informacion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <center>
+        <form method="post" action="usu.php">
+
+            <h1 id="titulo">Forma de pago</h1>
+            <p>
+                Estos campos deben ser llenados <strong>
+                    <abbr title="required">*</abbr></strong>      
+            </p>
+            <section>
+                <h2>Informacion del contacto</h2>
+                <!-- fieldset: es una practica comun usar los titulos 
+                y elementos de seccionamiento para estruccturar un formulario complejo
+                FOR: una lista de ids delimitados por espacios indicando aquellos elementos
+                cuyos valores contribullen como entrada o afectan algun calculo
+                -->
+                <fieldset id="fielsetDos">
+                    <!-- legend: hace ver el titulo como si fuera parte de la etiqueta-->
+                    <legend>Genero</legend>
+                    <ul>
+                        <li>
+                            <label for="title_1">
+                                <input type="radio" id="title_1" name="title" value="Sr."/>
+                                Hombre
+                            </label>
+                        </li>
+                        <li>
+                            <label for="title_2">
+                                <input type="radio" id="title_2" name="title" value="Srita."/>
+                                Mujer
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+                <p>
+                <label for="name">
+                    <span>Nombre</span>
+                    <input type="text" id="name" name="username" required/>
+                    <strong><abbr title="requiered">*</abbr></strong>
+                </label>
+                </p>
+                <p>
+                <label for="mail">
+                    <span>E-mail</span>
+                    <input type="email" id="mail" name="usermail" required />
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                </p>
+            </section>
+            <section>
+                <h2>Informacion de pago que cura</h2>
+                 <p>
+                <label for="card">
+                    <span>Tipo de targeta</span>
+                    <select id="card" name="usercard">
+                        <option value="visa">Visa</option>
+                        <option value="mc">Mastercard</option>
+                        <option value="amex">American Express</option>
+                    </select>
+                </label>
+                </p>
+                  <p>
+                <label for="number">
+                    <span>Numero de targeta</span>
+                   <input type="text" id="number" name="cardnumber" required />
+                   <strong><abbr title="required">*</abbr></strong>
+                </label>
+                </p>
+                 <p>
+                <label for="date">
+                    <span>Fecha de vencimiento</span>
+                   <input type="text" id="date" name="expiration" required />
+                   <strong><abbr title="required">*</abbr></strong>
+                   <em>Formato:mm/yy</em>
+                </label>
+                </p>
+            </section>
+            <section>
+                 <p>
+                     <button id="btn1">Validar el pago</button>
+                </p>
+            </section>
+        </form>
+  
+    </body>
+</html>

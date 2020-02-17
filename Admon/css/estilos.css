@@ -1,0 +1,11 @@
+h1{
+    text-align: left;
+    color: black;
+    
+}
+body{
+    padding-top: 80px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background: url(../img/download.jpg);
+}
